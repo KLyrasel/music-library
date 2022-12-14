@@ -1,10 +1,12 @@
 import GalleryItem from './GalleryItem'
 
-const Gallery = (props) => {
 
-    const display = props.data.map((item, index) => {
+const Gallery = (props) => {
+    const myData = props.data.result.read()
+
+    const display = myData.map((item, index) => {
         return (
-            <GalleryItem key={index} item={item}/>
+            <GalleryItem item={item} key={index}/>
         )
     })
 
